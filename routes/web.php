@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\PostController;
+// role 
+use App\Http\Controllers\RoleController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,7 +10,4 @@ Route::get('/', function () {
 });
 
 Route::resource('user', UserController::class);
-
-
-
-Route::resource('post', PostController::class);
+Route::resource('role', RoleController::class);

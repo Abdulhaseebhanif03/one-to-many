@@ -1,33 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Role;
 use App\Models\User;
+use App\Models\Role;    
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class User_RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = User::get();
-
-        foreach ($users as $user) {
-            echo $user->name . '<br>';
-            echo $user->email . '<br>';
-
-             foreach ($user->role as $role) {
-                echo $role->role_name . '<br>';
-            }
-
-            echo '<hr>';
-
-        // foreach ($users as $user) {
-        //    
-        }
+        //
     }
 
     /**
@@ -35,20 +20,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $user= User::find(2);
-        
-        // attach add new records
-        // $roles = [2, 3 ,4];
-        // $user->role ()->attach($roles);
-
-        //delete Records
-        // $roles = [2, 3 ,4];
-        // $user->role ()->detach($roles);
-
-        //sync existing records
-        $roles = [2, 3 ,4];
-        $user->role ()->sync($roles);
-
+        //
     }
 
     /**

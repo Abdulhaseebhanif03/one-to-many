@@ -5,25 +5,22 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        DB::table('users')->insert([
-            ['name' => 'Hasan Raza',   'email' => 'hasan@example.com'],
-            ['name' => 'Ali Ahmed',    'email' => 'ali@example.com'],
-            ['name' => 'Ayesha Khan',  'email' => 'ayesha@example.com'],
-            ['name' => 'Ahmed Malik', 'email' => 'ahmed@example.com'],
-            ['name' => 'Sara Iqbal',   'email' => 'sara@example.com'],
-            ['name' => 'Hammad Hanif',   'email' => 'hammad@example.com'],
-            ['name' => 'Abdul Haseeb',    'email' => 'abdul@example.com'],
-            ['name' => 'Minhaj Hanif',  'email' => 'minhaj@example.com'],
-            ['name' => 'Mustafa Malik', 'email' => 'mustafa@example.com'],
-            ['name' => 'Saira Iqbal',   'email' => 'saira@example.com'],
+        $users = [
+            ['id' => 1, 'name' => 'Ali Khan', 'email' => 'ali@example.com'],
+            ['id' => 2, 'name' => 'Sara', 'email' => 'sara@example.com'],
+            ['id' => 3, 'name' => 'Bilal', 'email' => 'bilal@example.com'],
+            ['id' => 4, 'name' => 'Hina', 'email' => 'hina@example.com'],
+            ['id' => 5, 'name' => 'Usman', 'email' => 'usman@example.com'],
+            ['id' => 6, 'name' => 'Ayesha', 'email' => 'ayesha@example.com'],
+            ['id' => 7, 'name' => 'Hasan', 'email' => 'hasan@example.com'],
+        ];
 
-        ]);
+        DB::table('user')->insert($users);
     }
+    protected $table = 'user';
 }

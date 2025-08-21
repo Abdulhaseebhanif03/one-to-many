@@ -2,24 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;  // ✅ for auth users
-use Illuminate\Notifications\Notifiable;  // ✅ optional (for notifications)
-use App\Models\Post;  // ✅ Post model import
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use HasFactory, Notifiable;
+    protected $table = 'user'; // ✅ correct table name
 
-    // Table ka naam (agar tumhari table ka naam 'users' hai to ye line optional hai)
-    protected $table = 'users';
-
-    // Mass assignable fields
-    protected $fillable = ['name', 'email'];
-
-    // Ek user ke multiple posts
-    public function posts()
+    public function role()
     {
-        return $this->hasMany(Post::class);  // ✅ relation defined
+        return $this->belongsToMany(Role::class, 'user_role');
     }
 }
